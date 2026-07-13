@@ -6,11 +6,9 @@ class Account:
 
     @property
     def balance(self):
-        """Read-only property getter. Balance cannot be modified directly from outside."""
         return self.__balance
 
     def deposit(self, amount):
-        """Adds money to the account. Rejects non-positive amounts."""
         if amount <= 0:
             print(f"--> Deposit Failed: Amount must be greater than 0 ETB.")
         else:
@@ -18,7 +16,6 @@ class Account:
             print(f"--> Successfully deposited {amount} ETB.")
 
     def withdraw(self, amount):
-        """Subtracts money from the account. Rejects non-positive amounts and overdrafts."""
         if amount <= 0:
             print(f"--> Withdrawal Failed: Amount must be greater than 0 ETB.")
         elif amount > self.__balance:
@@ -47,16 +44,16 @@ if __name__ == "__main__":
     
     # 2. Test valid deposit
     acc.deposit(500)
-    acc.statement()  # Balance should now be 1500 ETB
+    acc.statement()  
     
     # 3. Test invalid deposit (non-positive amount)
     acc.deposit(-50)
     
     # 4. Test valid withdrawal
     acc.withdraw(300)
-    acc.statement()  # Balance should now be 1200 ETB
+    acc.statement()  
     
     # 5. Test invalid withdrawal 
-    acc.withdraw(2000)  # Should reject because 2000 > 1200
+    acc.withdraw(2000)  
     
    
