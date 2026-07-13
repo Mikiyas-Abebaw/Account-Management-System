@@ -59,6 +59,4 @@ if __name__ == "__main__":
     # 5. Test invalid withdrawal 
     acc.withdraw(2000)  # Should reject because 2000 > 1200
     
-    # 6. Prove read-only property restriction
-    # Un-commenting the line below will crash the program with an AttributeError:
-    # acc.balance = 50000
+   
